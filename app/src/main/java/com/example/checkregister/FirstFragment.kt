@@ -46,7 +46,7 @@ class FirstFragment : Fragment() {
             }
             total = mViewModel.total(precio , newVal)
             mBinding.tvTotal.setText(total.toString())
-            //Toast.makeText(context,mBinding.etPrecio.text.toString(),Toast.LENGTH_LONG ).show()
+
         }
         mBinding.btGuardar.setOnClickListener {
             saveItem()
@@ -60,7 +60,7 @@ class FirstFragment : Fragment() {
     private fun saveItem(){
         val nombre:String = mBinding.etNombre.text.toString()
         if(nombre.isEmpty()){
-            Toast.makeText(context,"asopao",Toast.LENGTH_SHORT ).show()
+            Toast.makeText(context,"Ingrese Producto",Toast.LENGTH_SHORT ).show()
         }else{
             val newItem = ItemEntity(nombre=nombre, precio = precio, ctd = ctdTemp, total = total)
             mViewModel.insertItem(newItem)
